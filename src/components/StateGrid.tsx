@@ -1,65 +1,125 @@
 import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
+import { useState } from "react";
 
-interface StateInfo {
-  sigla: string;
+interface Concessionaria {
   nome: string;
   link: string;
 }
 
+interface StateInfo {
+  sigla: string;
+  nome: string;
+  concessionarias: Concessionaria[];
+}
+
 const estados: StateInfo[] = [
-  { sigla: "AC", nome: "Acre", link: "#ac" },
-  { sigla: "AL", nome: "Alagoas", link: "#al" },
-  { sigla: "AP", nome: "Amapá", link: "#ap" },
-  { sigla: "AM", nome: "Amazonas", link: "#am" },
-  { sigla: "BA", nome: "Bahia", link: "#ba" },
-  { sigla: "CE", nome: "Ceará", link: "#ce" },
-  { sigla: "DF", nome: "Distrito Federal", link: "#df" },
-  { sigla: "ES", nome: "Espírito Santo", link: "#es" },
-  { sigla: "GO", nome: "Goiás", link: "#go" },
-  { sigla: "MA", nome: "Maranhão", link: "#ma" },
-  { sigla: "MT", nome: "Mato Grosso", link: "#mt" },
-  { sigla: "MS", nome: "Mato Grosso do Sul", link: "#ms" },
-  { sigla: "MG", nome: "Minas Gerais", link: "#mg" },
-  { sigla: "PA", nome: "Pará", link: "#pa" },
-  { sigla: "PB", nome: "Paraíba", link: "#pb" },
-  { sigla: "PR", nome: "Paraná", link: "#pr" },
-  { sigla: "PE", nome: "Pernambuco", link: "#pe" },
-  { sigla: "PI", nome: "Piauí", link: "#pi" },
-  { sigla: "RJ", nome: "Rio de Janeiro", link: "#rj" },
-  { sigla: "RN", nome: "Rio Grande do Norte", link: "#rn" },
-  { sigla: "RS", nome: "Rio Grande do Sul", link: "#rs" },
-  { sigla: "RO", nome: "Rondônia", link: "#ro" },
-  { sigla: "RR", nome: "Roraima", link: "#rr" },
-  { sigla: "SC", nome: "Santa Catarina", link: "#sc" },
-  { sigla: "SP", nome: "São Paulo", link: "#sp" },
-  { sigla: "SE", nome: "Sergipe", link: "#se" },
-  { sigla: "TO", nome: "Tocantins", link: "#to" },
+  { sigla: "AL", nome: "Alagoas", concessionarias: [{ nome: "", link: "https://digital.igreenenergy.com.br/?id=125765&sendcontract=true&desc=8" }] },
+  { sigla: "BA", nome: "Bahia", concessionarias: [{ nome: "", link: "https://digital.igreenenergy.com.br/?id=125765&sendcontract=true&desc=8" }] },
+  { sigla: "CE", nome: "Ceará", concessionarias: [{ nome: "", link: "https://digital.igreenenergy.com.br/?id=125765&sendcontract=true&desc=10" }] },
+  { sigla: "ES", nome: "Espírito Santo", concessionarias: [{ nome: "", link: "https://digital.igreenenergy.com.br/?id=125765&sendcontract=true&desc=10" }] },
+  { sigla: "GO", nome: "Goiás", concessionarias: [{ nome: "", link: "https://digital.igreenenergy.com.br/?id=125765&sendcontract=true&desc=10" }] },
+  { sigla: "MA", nome: "Maranhão", concessionarias: [{ nome: "", link: "https://digital.igreenenergy.com.br/?id=125765&sendcontract=true&desc=8" }] },
+  {
+    sigla: "MG", nome: "Minas Gerais", concessionarias: [
+      { nome: "CEMIG-D", link: "https://digital.igreenenergy.com.br/?id=125765&sendcontract=true&desc=10" },
+      { nome: "CPFL Santa Cruz", link: "https://digital.igreenenergy.com.br/?id=125765&sendcontract=true&desc=8" },
+      { nome: "Energisa Minas Rio", link: "https://digital.igreenenergy.com.br/?id=125765&sendcontract=true&desc=10" },
+      { nome: "Energisa Sul Sudeste", link: "https://digital.igreenenergy.com.br/?id=125765&sendcontract=true&desc=8" },
+    ]
+  },
+  {
+    sigla: "MS", nome: "Mato Grosso do Sul", concessionarias: [
+      { nome: "Elektro", link: "https://digital.igreenenergy.com.br/?id=125765&sendcontract=true&desc=8" },
+      { nome: "Energisa", link: "https://digital.igreenenergy.com.br/?id=125765&sendcontract=true&desc=8" },
+    ]
+  },
+  { sigla: "MT", nome: "Mato Grosso", concessionarias: [{ nome: "", link: "https://digital.igreenenergy.com.br/?id=125765&sendcontract=true&desc=10" }] },
+  { sigla: "PB", nome: "Paraíba", concessionarias: [{ nome: "", link: "https://digital.igreenenergy.com.br/?id=125765&sendcontract=true&desc=8" }] },
+  { sigla: "PE", nome: "Pernambuco", concessionarias: [{ nome: "", link: "https://digital.igreenenergy.com.br/?id=125765&sendcontract=true&desc=8" }] },
+  { sigla: "PI", nome: "Piauí", concessionarias: [{ nome: "", link: "https://digital.igreenenergy.com.br/?id=125765&sendcontract=true&desc=8" }] },
+  {
+    sigla: "PR", nome: "Paraná", concessionarias: [
+      { nome: "CELESC", link: "https://digital.igreenenergy.com.br/?id=125765&sendcontract=true&desc=8" },
+      { nome: "COPEL", link: "https://digital.igreenenergy.com.br/?id=125765&sendcontract=true&desc=8" },
+      { nome: "CPFL Santa Cruz", link: "https://digital.igreenenergy.com.br/?id=125765&sendcontract=true&desc=8" },
+    ]
+  },
+  {
+    sigla: "RJ", nome: "Rio de Janeiro", concessionarias: [
+      { nome: "ENEL", link: "https://digital.igreenenergy.com.br/?id=125765&sendcontract=true&desc=8" },
+      { nome: "Energisa Minas Rio", link: "https://digital.igreenenergy.com.br/?id=125765&sendcontract=true&desc=10" },
+    ]
+  },
+  { sigla: "RN", nome: "Rio Grande do Norte", concessionarias: [{ nome: "", link: "https://digital.igreenenergy.com.br/?id=125765&sendcontract=true&desc=8" }] },
+  {
+    sigla: "RS", nome: "Rio Grande do Sul", concessionarias: [
+      { nome: "CEEE", link: "https://digital.igreenenergy.com.br/?id=125765&sendcontract=true&desc=10" },
+      { nome: "RGE", link: "https://digital.igreenenergy.com.br/?id=125765&sendcontract=true&desc=8" },
+    ]
+  },
+  { sigla: "SC", nome: "Santa Catarina", concessionarias: [{ nome: "", link: "https://digital.igreenenergy.com.br/?id=125765&sendcontract=true&desc=8" }] },
+  {
+    sigla: "SP", nome: "São Paulo", concessionarias: [
+      { nome: "CPFL", link: "https://digital.igreenenergy.com.br/?id=125765&sendcontract=true&desc=8" },
+      { nome: "CPFL Piratininga", link: "https://digital.igreenenergy.com.br/?id=125765&sendcontract=true&desc=8" },
+      { nome: "CPFL Santa Cruz", link: "https://digital.igreenenergy.com.br/?id=125765&sendcontract=true&desc=8" },
+      { nome: "Elektro", link: "https://digital.igreenenergy.com.br/?id=125765&sendcontract=true&desc=8" },
+      { nome: "Energisa Sul Sudeste", link: "https://digital.igreenenergy.com.br/?id=125765&sendcontract=true&desc=8" },
+    ]
+  },
+  { sigla: "TO", nome: "Tocantins", concessionarias: [{ nome: "", link: "https://digital.igreenenergy.com.br/?id=125765&sendcontract=true&desc=8" }] },
 ];
 
-const StateCard = ({ state, index }: { state: StateInfo; index: number }) => (
-  <motion.a
-    href={state.link}
-    target="_blank"
-    rel="noopener noreferrer"
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ delay: index * 0.03, duration: 0.4 }}
-    whileHover={{ y: -4, scale: 1.02 }}
-    className="group flex flex-col items-center gap-2 rounded-xl bg-card p-5 shadow-card transition-all duration-300 hover:shadow-card-hover border border-border cursor-pointer"
-  >
-    <div className="flex items-center justify-center w-14 h-14 rounded-full gradient-hero mb-1 group-hover:scale-110 transition-transform">
-      <span className="font-display font-black text-xl text-primary-foreground">
-        {state.sigla}
+const StateCard = ({ state, index }: { state: StateInfo; index: number }) => {
+  const [selectedTab, setSelectedTab] = useState(0);
+  const hasMultiple = state.concessionarias.length > 1;
+  const currentLink = state.concessionarias[selectedTab].link;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.03, duration: 0.4 }}
+      className="group flex flex-col items-center gap-2 rounded-xl bg-card p-4 shadow-card border border-border"
+    >
+      <div className="flex items-center justify-center w-12 h-12 rounded-full gradient-hero mb-1 group-hover:scale-110 transition-transform">
+        <span className="font-display font-black text-lg text-primary-foreground">
+          {state.sigla}
+        </span>
+      </div>
+      <span className="text-sm font-medium text-foreground text-center leading-tight">
+        {state.nome}
       </span>
-    </div>
-    <span className="text-sm font-medium text-foreground text-center leading-tight">
-      {state.nome}
-    </span>
-    <MapPin className="h-3.5 w-3.5 text-muted-foreground group-hover:text-primary transition-colors" />
-  </motion.a>
-);
+
+      {hasMultiple && (
+        <div className="w-full mt-1">
+          <select
+            value={selectedTab}
+            onChange={(e) => setSelectedTab(Number(e.target.value))}
+            className="w-full text-xs rounded-lg border border-border bg-background px-2 py-1.5 text-foreground focus:outline-none focus:ring-1 focus:ring-primary"
+          >
+            {state.concessionarias.map((c, i) => (
+              <option key={i} value={i}>
+                {c.nome}
+              </option>
+            ))}
+          </select>
+        </div>
+      )}
+
+      <a
+        href={currentLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-1 w-full text-center text-xs font-bold gradient-hero text-primary-foreground px-3 py-2 rounded-lg hover:opacity-90 transition-opacity"
+      >
+        Desconto na sua energia aqui
+      </a>
+    </motion.div>
+  );
+};
 
 const StateGrid = () => {
   return (
@@ -75,11 +135,11 @@ const StateGrid = () => {
             Selecione seu <span className="text-primary">Estado</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-md mx-auto">
-            Clique no seu estado para acessar o link exclusivo de cadastro iGreen Energy
+            Escolha seu estado e sua concessionária para garantir seu desconto
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
           {estados.map((state, i) => (
             <StateCard key={state.sigla} state={state} index={i} />
           ))}
