@@ -94,18 +94,20 @@ const StateCard = ({ state, index }: { state: StateInfo; index: number }) => {
       </span>
 
       {hasMultiple && (
-        <div className="w-full mt-1">
-          <select
-            value={selectedTab}
-            onChange={(e) => setSelectedTab(Number(e.target.value))}
-            className="w-full text-xs rounded-lg border border-border bg-background px-2 py-1.5 text-foreground focus:outline-none focus:ring-1 focus:ring-primary"
-          >
-            {state.concessionarias.map((c, i) => (
-              <option key={i} value={i}>
-                {c.nome}
-              </option>
-            ))}
-          </select>
+        <div className="w-full mt-1 flex flex-wrap gap-1 justify-center">
+          {state.concessionarias.map((c, i) => (
+            <button
+              key={i}
+              onClick={() => setSelectedTab(i)}
+              className={`text-[10px] font-semibold px-2 py-1 rounded-full border transition-all duration-200 ${
+                selectedTab === i
+                  ? "gradient-hero text-primary-foreground border-transparent shadow-sm"
+                  : "bg-muted text-muted-foreground border-border hover:border-primary hover:text-primary"
+              }`}
+            >
+              {c.nome}
+            </button>
+          ))}
         </div>
       )}
 
