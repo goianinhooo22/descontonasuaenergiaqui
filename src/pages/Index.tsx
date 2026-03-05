@@ -1,6 +1,7 @@
 import HeroSection from "@/components/HeroSection";
 import BenefitsSection from "@/components/BenefitsSection";
 import StateGrid from "@/components/StateGrid";
+import IGreenClubSection from "@/components/IGreenClubSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -9,6 +10,7 @@ const Index = () => {
       <HeroSection />
       <BenefitsSection />
       <StateGrid />
+      <IGreenClubSection />
       <Footer />
     </main>
   );
