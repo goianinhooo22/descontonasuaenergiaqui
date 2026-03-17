@@ -27,7 +27,7 @@ const benefits = [
 ];
 
 const Licenciado = () => {
-  const whatsappLink = "https://wa.me/5563984507923?text=Oi!%20Vi%20que%20voc%C3%AA%20entrou%20pelo%20link%20agora%20%F0%9F%91%8D%0A%0AVoc%C3%AA%20tem%20interesse%20em%20come%C3%A7ar%20como%20licenciado%20e%20ganhar%20com%20o%20mercado%20de%20energia%2C%20ou%20s%C3%B3%20quer%20entender%20melhor%20como%20funciona%3F%0A%0ASe%20quiser%2C%20te%20explico%20tudo%20de%20forma%20simples%20e%20sem%20compromisso.%20consegue%20economizar%3F%0A%0ASe%20quiser%2C%20eu%20te%20explico%20tudo%20sem%20compromisso%20%F0%9F%91%8D";
+  const whatsappLink = "https://wa.me/63984507923";
 
   return (
     <main className="min-h-screen bg-background">
