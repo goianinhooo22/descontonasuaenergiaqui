@@ -27,7 +27,7 @@ const benefits = [
 ];
 
 const Licenciado = () => {
-  const whatsappLink = "https://wa.me/5563984507923?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20ser%20um%20licenciado%20iGreen!";
+  const whatsappLink = "https://wa.me/63984507923";
 
   return (
     <main className="min-h-screen bg-background">
