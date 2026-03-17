@@ -27,7 +27,7 @@ const benefits = [
 ];
 
 const Licenciado = () => {
-  const whatsappLink = "https://wa.me/5563984507923?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20ser%20um%20licenciado%20iGreen!";
+  const whatsappLink = "https://wa.me/63984507923";
 
   return (
     <main className="min-h-screen bg-background">
@@ -164,6 +164,43 @@ const Licenciado = () => {
               <iframe
                 src="https://www.youtube.com/embed/JOyQ0bljHuU"
                 title="Como funcionam as comissões iGreen"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Vídeo - iGreen Expert 2024 */}
+      <section className="py-16 px-6 bg-muted/30">
+        <div className="container mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-10"
+          >
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+              <span className="text-primary">iGreen Expert</span> 2024
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-md mx-auto">
+              Conheça o maior evento da iGreen Energy
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="max-w-3xl mx-auto"
+          >
+            <div className="rounded-2xl overflow-hidden shadow-card-hover border border-border aspect-video">
+              <iframe
+                src="https://www.youtube.com/embed/xy--UW8ydlA?start=1"
+                title="iGreen Expert 2024"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 className="w-full h-full"
