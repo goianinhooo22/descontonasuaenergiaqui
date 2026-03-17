@@ -54,14 +54,24 @@ const HeroSection = () => {
             </div>
           </div>
 
-          <motion.a
-            href="#estados"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
-            className="inline-block gradient-hero text-primary-foreground font-display font-bold text-lg px-8 py-4 rounded-xl shadow-card-hover transition-shadow hover:shadow-lg"
-          >
-            Quero meu desconto →
-          </motion.a>
+          <div className="flex flex-wrap gap-4">
+            <motion.a
+              href="#estados"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-block gradient-hero text-primary-foreground font-display font-bold text-lg px-8 py-4 rounded-xl shadow-card-hover transition-shadow hover:shadow-lg"
+            >
+              Quero o meu benefício por direito →
+            </motion.a>
+            <motion.a
+              href="/licenciado"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-block bg-accent text-accent-foreground font-display font-bold text-lg px-8 py-4 rounded-xl shadow-card-hover transition-shadow hover:shadow-lg border-2 border-accent"
+            >
+              Quero ser um licenciado →
+            </motion.a>
+          </div>
         </motion.div>
       </div>
     </section>
