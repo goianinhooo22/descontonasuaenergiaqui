@@ -182,16 +182,8 @@ const StateGrid = () => {
           </p>
         </motion.div>
 
-        {/* Estados com concessionária única */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mb-4">
-          {estados.filter(s => s.concessionarias.length === 1).map((state, i) => (
-            <StateCard key={state.sigla} state={state} index={i} />
-          ))}
-        </div>
-
-        {/* Estados com múltiplas concessionárias */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-          {estados.filter(s => s.concessionarias.length > 1).map((state, i) => (
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 items-start">
+          {estados.map((state, i) => (
             <StateCard key={state.sigla} state={state} index={i} />
           ))}
         </div>
