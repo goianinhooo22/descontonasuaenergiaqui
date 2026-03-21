@@ -21,7 +21,7 @@ const faqs = [
   {
     question: "Qual o percentual de desconto que vou receber?",
     answer:
-      "O desconto varia entre 8% e 10% sobre o valor do consumo de energia, dependendo da sua concessionária e estado. É uma economia garantida todos os meses, sem custo adicional.",
+      "O desconto varia de no mínimo 10% a até 20%, dependendo do seu estado e da sua concessionária. É uma economia garantida todos os meses, sem custo adicional.",
   },
   {
     question: "Existe algum custo ou taxa para aderir?",
