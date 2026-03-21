@@ -6,6 +6,7 @@ import HighVoltageSection from "@/components/HighVoltageSection";
 import VideoSection from "@/components/VideoSection";
 import IGreenClubSection from "@/components/IGreenClubSection";
 import Footer from "@/components/Footer";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 const Index = () => {
   return (
@@ -18,6 +19,7 @@ const Index = () => {
       <VideoSection />
       <IGreenClubSection />
       <Footer />
+      <WhatsAppFloat />
     </main>
   );
 };
