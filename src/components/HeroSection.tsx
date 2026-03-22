@@ -56,9 +56,7 @@ const HeroSection = () => {
 
           <div className="flex flex-wrap gap-4">
             <motion.a
-              href="https://wa.link/mzv0mc"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#estados"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
               className="inline-block gradient-hero text-primary-foreground font-display font-bold text-lg px-8 py-4 rounded-xl shadow-card-hover transition-shadow hover:shadow-lg"
@@ -66,9 +64,7 @@ const HeroSection = () => {
               Quero o meu benefício por direito →
             </motion.a>
             <motion.a
-              href="https://wa.link/kf1oyf"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/licenciado"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
               className="inline-block bg-accent text-accent-foreground font-display font-bold text-lg px-8 py-4 rounded-xl shadow-card-hover transition-shadow hover:shadow-lg border-2 border-accent"
