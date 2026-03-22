@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import { Building2, Zap, ArrowRight } from "lucide-react";
 
-const whatsappLink =
-  "https://wa.me/5563981436077?text=Ol%C3%A1!%20Conhe%C3%A7o%20algu%C3%A9m%20que%20possui%20energia%20de%20alta%20tens%C3%A3o%20e%20gostaria%20de%20saber%20mais%20sobre%20as%20condi%C3%A7%C3%B5es%20especiais%20da%20iGreen%20para%20esse%20tipo%20de%20consumidor.";
+const whatsappLink = "https://wa.link/vuc6rd";
 
 const HighVoltageSection = () => {
   return (
