@@ -56,7 +56,9 @@ const HeroSection = () => {
 
           <div className="flex flex-wrap gap-4">
             <motion.a
-              href="#estados"
+              href="https://wa.link/mzv0mc"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
               className="inline-block gradient-hero text-primary-foreground font-display font-bold text-lg px-8 py-4 rounded-xl shadow-card-hover transition-shadow hover:shadow-lg"
