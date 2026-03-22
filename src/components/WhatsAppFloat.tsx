@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const WhatsAppFloat = () => {
   return (
     <motion.a
-      href="https://wa.link/mzv0mc"
+      href="https://wa.me/5563981436077?text=Quero%20conhecer%20mais%20sobre%20a%20iGreen%20e%20como%20funciona"
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-lg hover:bg-[#1ebe5a] transition-colors"

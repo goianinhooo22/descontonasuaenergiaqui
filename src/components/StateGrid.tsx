@@ -207,7 +207,7 @@ const StateGrid = () => {
             Ficou com alguma dúvida sobre o desconto?
           </p>
           <a
-            href="https://wa.link/mzv0mc"
+            href="https://wa.me/5563981436077?text=Quero%20conhecer%20mais%20sobre%20a%20iGreen%20e%20como%20funciona"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-[#25D366] text-white font-bold px-6 py-3 rounded-xl hover:bg-[#1ebe5a] transition-colors shadow-md"
